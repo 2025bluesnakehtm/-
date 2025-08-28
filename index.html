@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0ea5a3">
+  <title>2025 관광지답사 · 푸른뱀 테마</title>
+  <meta name="description" content="푸른뱀의 해: 단서 수집 & 쿠폰 리워드 · 영월·정선 답사" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --brand: #0ea5a3; /* teal-500 */
+      --brand-600: #0d9488; /* teal-600 */
+      --ink: #0b3d3c;
+      --safe-bottom: env(safe-area-inset-bottom);
+    }
+    body { font-family: Pretendard, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji; color: #111827; }
+    .card { border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    .snake-gradient { background: radial-gradient(1200px 600px at 10% -10%, rgba(13,148,136,.15), transparent), radial-gradient(800px 400px at 90% 0%, rgba(14,165,160,.12), transparent); }
+    .scale-bg { background-image: url('pattern-scales.svg'); background-size: 160px; background-repeat: repeat; background-position: 0 0; }
+    .safe-bottom { padding-bottom: calc(72px + var(--safe-bottom)); }
+    .sticky-nav { height: calc(56px + var(--safe-bottom)); padding-bottom: var(--safe-bottom); }
+    @media (min-width: 768px) { .safe-bottom { padding-bottom: 0; } .sticky-nav { display:none; } }
+    .btn-brand { background: var(--brand); color:white; }
+    .btn-brand:hover { background: var(--brand-600); }
+    .ink { color: var(--ink); }
+  </style>
+</head>
+<body class="bg-white safe-bottom snake-gradient">
+  <!-- SVG assets -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="gradSnake" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#2dd4bf"/>
+        <stop offset="100%" stop-color="#0ea5a3"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- TOP NAV -->
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-semibold text-xl flex items-center gap-2">
+        <img src="snake-badge.svg" alt="" class="w-6 h-6" />
+        2025 관광지답사
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#clues" class="hover:opacity-80">단서</a>
+        <a href="#wallet" class="hover:opacity-80">쿠폰지갑</a>
+        <a href="#faq" class="hover:opacity-80">안내</a>
+      </nav>
+      <a href="#clues" class="rounded-2xl px-4 py-2 text-sm border hover:bg-gray-50">시작하기</a>
+    </div>
+  </header>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="sticky-nav fixed bottom-0 inset-x-0 z-40 md:hidden bg-white/90 backdrop-blur border-t">
+    <div class="max-w-6xl mx-auto px-6 h-full grid grid-cols-3 items-center gap-2 text-sm">
+      <a href="#clues" class="flex flex-col items-center justify-center py-2 active:opacity-80">단서</a>
+      <a href="#wallet" class="flex flex-col items-center justify-center py-2 active:opacity-80">쿠폰</a>
+      <a href="#faq" class="flex flex-col items-center justify-center py-2 active:opacity-80">안내</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 opacity-20 pointer-events-none">
+      <img src="snake-hero.svg" class="w-[420px] h-[420px]" alt="푸른뱀" />
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16 grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold bg-teal-50 text-teal-700 border border-teal-100">🐍 푸른뱀의 해 · BLUE SNAKE</div>
+        <h1 class="mt-3 text-3xl md:text-5xl font-bold leading-tight ink">
+          푸른뱀의 여정,<br class="hidden md:block" /> 단서를 따라 보물이 열린다
+        </h1>
+        <p class="mt-3 md:mt-4 text-gray-700 text-base md:text-lg">
+          각 포인트에서 <b>푸른뱀 스티커</b>의 코드를 입력하면 미션이 해제되고, 보상 쿠폰이 지갑에 담겨요.
+          <span class="text-teal-700 font-semibold">6개</span> 전부 모으면 <b>그랜드 쿠폰</b>이 열립니다.
+        </p>
+        <div class="mt-5 flex gap-2 md:gap-3">
+          <a href="#clues" class="rounded-2xl btn-brand px-5 py-3 text-sm md:text-base active:opacity-90">단서 입력</a>
+          <a href="#wallet" class="rounded-2xl border px-5 py-3 text-sm md:text-base active:bg-gray-50">내 쿠폰지갑</a>
+        </div>
+      </div>
+      <div class="aspect-video rounded-2xl border overflow-hidden card scale-bg">
+        <img src="https://images.unsplash.com/photo-1533514114760-4389f572ae99?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover mix-blend-multiply" alt="강원 풍경">
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUES -->
+  <section id="clues" class="border-t bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <div class="flex items-end justify-between">
+        <h2 class="text-2xl font-semibold ink">푸른뱀 단서 입력</h2>
+        <span class="hidden md:inline text-sm text-gray-500">올바른 코드를 입력하면 해당 단서가 해제됩니다.</span>
+      </div>
+
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6" id="clueGrid"></div>
+
+      <div class="mt-6 md:mt-8 rounded-2xl border bg-white p-4 md:p-5 card">
+        <form id="codeForm" class="grid grid-cols-1 md:grid-cols-[1fr_200px] gap-3 md:gap-4">
+          <input id="codeInput" inputmode="text" autocapitalize="characters" autocomplete="off"
+                 class="rounded-2xl border px-4 py-4 text-base md:text-lg tracking-widest uppercase"
+                 placeholder="푸른뱀 코드 입력 (예: JN25)" />
+          <button class="rounded-2xl btn-brand px-4 py-4 text-base md:text-lg active:opacity-90">해제하기</button>
+        </form>
+        <div class="mt-3 flex gap-2">
+          <button id="pasteBtn" class="rounded-2xl border px-4 py-2 text-sm active:bg-gray-50">클립보드에서 붙여넣기</button>
+          <button id="clearBtn" class="rounded-2xl border px-4 py-2 text-sm active:bg-gray-50">쿠폰 초기화(내 기기)</button>
+        </div>
+        <p id="codeMsg" class="mt-3 text-sm"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALLET -->
+  <section id="wallet" class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <h2 class="text-2xl font-semibold ink">나의 쿠폰 지갑</h2>
+      <p class="mt-2 text-gray-600 text-sm">해제된 단서마다 쿠폰이 지갑에 저장됩니다.</p>
+      <div id="couponGrid" class="mt-4 md:mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"></div>
+
+      <div id="grandCoupon" class="mt-6 md:mt-8 hidden rounded-2xl border p-6 card bg-teal-50 border-teal-100">
+        <h3 class="text-xl font-semibold ink">🎉 그랜드 쿠폰</h3>
+        <p class="mt-2 text-gray-700">축하합니다! 모든 단서를 해제했습니다.</p>
+        <div class="mt-4 p-4 rounded-xl bg-white border">
+          <div class="text-2xl md:text-3xl font-bold text-teal-700">GRAND-2025-TOUR</div>
+          <p class="text-sm text-gray-600 mt-1">현장 스태프에게 쿠폰 코드를 보여주세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="border-t bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <h2 class="text-2xl font-semibold ink">안내</h2>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 md:gap-6">
+        <div class="rounded-2xl border p-5 md:p-6 bg-white card">
+          <h3 class="font-semibold">단서 코드는 어디서 얻나요?</h3>
+          <p class="mt-2 text-gray-700 text-sm">
+            <b>푸른뱀 스티커</b> 또는 배너/스탭 카드에서 확인하거나, 레크리에이션 미션 완료 시 지급됩니다.
+          </p>
+        </div>
+        <div class="rounded-2xl border p-5 md:p-6 bg-white card">
+          <h3 class="font-semibold">쿠폰은 어떻게 쓰나요?</h3>
+          <p class="mt-2 text-gray-700 text-sm">
+            쿠폰 카드에 표시된 <b>쿠폰 코드</b>를 현장 스태프에게 제시하세요. 필요 시 이름/팀 확인을 요청할 수 있습니다.
+          </p>
+        </div>
+      </div>
+      <p class="mt-8 text-sm text-gray-500">© 2025 2025 관광지답사 · BLUE SNAKE THEME</p>
+    </div>
+  </section>
+
+  <script>
+    // ---------- CONFIG ----------
+    const CLUES = [
+      {{ id: 'JN25', name: '영월 장릉', hint: '단종의 슬픔이 깃든 곳' }},
+      {{ id: 'AR37', name: '정선 아리랑시장', hint: '강원도의 흥겨운 장터' }},
+      {{ id: 'RB52', name: '정선 레일바이크', hint: '바람을 가르는 철길 위 라이딩' }},
+      {{ id: 'HB64', name: '영월 한반도지형', hint: '한반도 모양의 신비' }},
+      {{ id: 'HD73', name: '정선 화암동굴', hint: '지하의 비밀 통로' }},
+      {{ id: 'BM88', name: '영월 별마로천문대', hint: '별에 가장 가까운 밤' }},
+    ];
+    const LS_KEY = 'tour2025_unlocks_snake_v1';
+
+    const clueGrid = document.getElementById('clueGrid');
+    const couponGrid = document.getElementById('couponGrid');
+    const grandCoupon = document.getElementById('grandCoupon');
+    const codeMsg = document.getElementById('codeMsg');
+    const input = document.getElementById('codeInput');
+    const pasteBtn = document.getElementById('pasteBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function loadUnlocks() { try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; } catch(e){ return []; } }
+    function saveUnlocks(arr){ localStorage.setItem(LS_KEY, JSON.stringify(arr)); }
+    let unlocked = loadUnlocks();
+
+    function renderClues(){
+      clueGrid.innerHTML = '';
+      CLUES.forEach(c => {
+        const isOpen = unlocked.includes(c.id);
+        const el = document.createElement('div');
+        el.className = 'rounded-2xl border p-5 md:p-6 bg-white card';
+        el.innerHTML = `
+          <div class="text-sm ${isOpen ? 'text-teal-700' : 'text-gray-400'}">${isOpen ? '해제됨' : '잠김'}</div>
+          <div class="flex items-center gap-2 mt-1">
+            <img src="snake-badge.svg" class="w-5 h-5" alt="" />
+            <h3 class="font-semibold text-lg">${c.name}</h3>
+          </div>
+          <p class="mt-1 text-sm text-gray-600">힌트: ${c.hint}</p>
+          <div class="mt-3 text-xs text-gray-500">코드: ${isOpen ? c.id : '????'}</div>
+        `;
+        clueGrid.appendChild(el);
+      });
+      grandCoupon.classList[unlocked.length === CLUES.length ? 'remove' : 'add']('hidden');
+    }
+
+    function renderCoupons(){
+      couponGrid.innerHTML = '';
+      unlocked.forEach(id => {
+        const c = CLUES.find(x => x.id === id);
+        if(!c) return;
+        const el = document.createElement('div');
+        el.className = 'rounded-2xl border p-5 md:p-6 bg-white card';
+        el.innerHTML = `
+          <div class="text-sm text-teal-700">쿠폰 획득</div>
+          <div class="flex items-center gap-2 mt-1">
+            <img src="snake-badge.svg" class="w-5 h-5" alt="" />
+            <h3 class="font-semibold text-lg">${c.name}</h3>
+          </div>
+          <p class="mt-1 text-sm text-gray-600">쿠폰 코드</p>
+          <div class="mt-3 p-3 rounded-xl bg-teal-50 border border-teal-100 font-mono text-xl text-teal-700">${id}-COUPON</div>
+          <p class="mt-2 text-xs text-gray-500">이 화면을 스태프에게 보여주세요.</p>
+        `;
+        couponGrid.appendChild(el);
+      });
+    }
+
+    renderClues();
+    renderCoupons();
+
+    document.getElementById('codeForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const raw = (input.value || '').trim().toUpperCase();
+      input.value = '';
+      codeMsg.className = 'mt-3 text-sm';
+      if(!raw) return;
+      const found = CLUES.find(c => c.id === raw);
+      if(!found){
+        codeMsg.textContent = '코드가 올바르지 않습니다. 현장에서 받은 코드를 다시 확인해주세요.';
+        codeMsg.classList.add('text-red-600');
+        return;
+      }
+      if(unlocked.includes(found.id)){
+        codeMsg.textContent = '이미 해제한 단서입니다!';
+        codeMsg.classList.add('text-yellow-700');
+        return;
+      }
+      unlocked.push(found.id);
+      saveUnlocks(unlocked);
+      renderClues();
+      renderCoupons();
+      codeMsg.textContent = `${found.name} 단서 해제 완료! 쿠폰이 지갑에 담겼어요.`;
+      codeMsg.classList.add('text-teal-700');
+      document.querySelector('#wallet').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Mobile helpers
+    document.getElementById('pasteBtn').addEventListener('click', async () => {
+      if(!navigator.clipboard) return alert('클립보드 접근을 지원하지 않는 브라우저입니다.');
+      try { input.value = (await navigator.clipboard.readText() || '').trim(); input.focus(); }
+      catch(e){ alert('클립보드 읽기에 실패했습니다. 브라우저 설정을 확인해주세요.'); }
+    });
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      if(confirm('내 기기의 쿠폰/해제 정보를 초기화할까요?')){
+        unlocked = [];
+        saveUnlocks(unlocked);
+        renderClues();
+        renderCoupons();
+        codeMsg.textContent = '초기화되었습니다.';
+        codeMsg.className = 'mt-3 text-sm text-gray-600';
+      }
+    });
+  </script>
+</body>
+</html>
