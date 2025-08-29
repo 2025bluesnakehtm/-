@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="snakeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5a3" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 200 Q200 100 400 200 T800 200" stroke="url(#snakeGrad)" stroke-width="40" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <circle cx="760" cy="200" r="20" fill="#0ea5a3"/>
+  <circle cx="50" cy="200" r="12" fill="#14b8a6"/>
+</svg>
